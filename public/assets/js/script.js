@@ -23,7 +23,7 @@ $(document).ready(function() {
       // Send the Put request.
       $.ajax("/burgers/" + burger_id, {
         type: "PUT",
-        data: newDevoured
+        data: newDevouredState
       }).then(
         function() {
           console.log("Changed burger to ", newDevoured);
