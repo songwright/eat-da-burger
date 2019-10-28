@@ -14,5 +14,21 @@ $(document).ready(function() {
 
       */
 
+      var newDevoured = $(this).data("newdevoured");
+
+      var newDevouredState = {
+        devoured: newDevoured
+      };
+
+      // Send the Put request.
+      $.ajax("/burgers/" + burger_id, {
+        type: "PUT",
+        data: newDevoured
+      }).then(
+        function() {
+          console.log("Changed burger to ", newDevoured);
+          location.reload();
+        }
+      );
   });
 });
