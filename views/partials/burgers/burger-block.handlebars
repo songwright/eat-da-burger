@@ -1,10 +1,7 @@
-<div class="devour-form">
-  <div class="form-group">
-
+<li style="list-style: none;">
     {{id}}. {{burger_name}}
-    <button type="submit" data-id="{{burger_id}}" data-newDevoured="{{devoured}}">
-      {{#if devoured}}Devour it!{{else}}{{/if}}
-      {{!-- Button Text Here --}}
+    <button class="change-devour" data-id="{{id}}" data-newDevoured="{{devour}}">
+      {{!-- {{#if devoured}}Devour it!{{else}}{{/if}} --}}
+      {{#if devour}}Devour it!{{else}}{{/if}}
     </button>
-  </div>
-</div>
+</li>
