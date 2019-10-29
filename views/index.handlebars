@@ -11,11 +11,13 @@
 				use handlebars to display burgers not yet devoured
 
 			-->
-			{{#each burgers}}
-				{{#unless this.devoured}}
-					{{> burgers/burger-block devoured=true}}
-				{{/unless}}
-			{{/each}}
+				<ul>
+					{{#each burgers}}
+						{{#unless devoured}}
+							{{> burgers/burger-block devour=true}}
+						{{/unless}}
+					{{/each}}
+				</ul>
 			</div>
 		</div>
 		<div class="col-md-6 text-center" class="task">
