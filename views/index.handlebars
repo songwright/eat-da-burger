@@ -11,6 +11,11 @@
 				use handlebars to display burgers not yet devoured
 
 			-->
+			{{#each burgers}}
+				{{#unless devoured}}
+					{{> burgers/burger-block devoured=false}}
+				{{/unless}}
+			{{/each}}
 			</div>
 		</div>
 		<div class="col-md-6 text-center" class="task">
@@ -19,7 +24,7 @@
 					use handlebars to display each devoured burger 
 
 			-->
-			  {{#each burger_data}}
+			  {{#each burgers}}
 			  	{{#if this.devoured}}
 			  		<input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
 				{{/if}}
