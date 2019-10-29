@@ -53,17 +53,16 @@ var orm = {
       if (err) {
         throw err;
       }
-
+      console.log(result);
       cb(result);
     });
   },
   // objColVals would be the columns and values that you want to update
   // an example of objColVals would be {name: panther, devoured: true}
-  update: function(table, objColVals, condition) {
+  update: function(table, condition, cb) {
     var queryString = "UPDATE " + table;
 
-    queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += " SET devoured = true "
     queryString += " WHERE ";
     queryString += condition;
 
@@ -73,7 +72,7 @@ var orm = {
         throw err;
       }
 
-      // cb(result);
+      cb(result);
     });
   }
 };
