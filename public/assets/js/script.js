@@ -1,10 +1,11 @@
 $(document).ready(function() {
 
-  $(".devour-form").on("submit", function(event) {
+  $(".change-devour").on("click", function(event) {
     event.preventDefault();
 
-    var burger_id = $(this).children(".burger_id").val();
-    console.log(burger_id);
+    // var burger_id = $(this).children(".burger_id").val();
+    var id = $(this).data("id");
+    console.log("Burger id: " + id);
 
       /*
 
@@ -21,7 +22,7 @@ $(document).ready(function() {
       };
 
       // Send the Put request.
-      $.ajax("/burgers/" + burger_id, {
+      $.ajax("/burgers/" + id, {
         type: "PUT",
         data: newDevouredState
       }).then(
