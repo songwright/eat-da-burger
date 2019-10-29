@@ -9,19 +9,23 @@ var burger = {
       cb(res);
     });
   },
-  create: function(name, cb) {
+  create: function(name, vals, cb) {
     //
     // create burger
     //
-    orm.create("burgers", name, cb, function(res) {
+    console.log("INSIDE MODEL: VALS", vals)
+    orm.create("burgers", name, vals, function(res) {
       cb(res);
     });
   },
-  update: function(id, cb) {
+  update: function(condition, cb) {
     //
     // modify burger
     //
-    orm.update("burgers", id, cb, function(res) {
+    console.log(condition, cb)
+
+    // an example of objColVals would be {name: panther, devoured: true}
+    orm.update("burgers", condition, cb, function(res) {
       cb(res);
     })
   }
